@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbzlqrJ2eOvKrttdVhKJnxbzFuoyC6olzwjvPFa0OVF9Km2N7f4o5UVfsRlPV1M8Pxz3/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyy-plimy32WZ4vho9pLDHSw_E_Z2VUi4XvB2sr3aflK2QH319R83vbVoPPrqKkG3Y6/exec";
 
 document.getElementById('attendanceForm').addEventListener('submit', e => {
   e.preventDefault();
