@@ -1,16 +1,16 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbyy-plimy32WZ4vho9pLDHSw_E_Z2VUi4XvB2sr3aflK2QH319R83vbVoPPrqKkG3Y6/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwCNxtvpQVkA4tZ6cjexUamTXbm7mJRUQ3ZFMaPleN0fpG4Sj-pVSy_mmMbYqENLNyq/exec";
 
 document.getElementById('attendanceForm').addEventListener('submit', e => {
   e.preventDefault();
 
   const data = {
-    action: 'saveAttendance',
-    code: sessionStorage.getItem('teacherCode'),
     name: document.getElementById('studentName').value,
     className: document.getElementById('className').value,
     week: document.getElementById('week').value,
     present: document.getElementById('present').value
   };
+
+  document.getElementById('result').textContent = "⏳ جاري تسجيل الغياب...";
 
   fetch(scriptURL, {
     method: 'POST',
@@ -19,10 +19,10 @@ document.getElementById('attendanceForm').addEventListener('submit', e => {
   .then(res => res.json())
   .then(result => {
     if (result.success) {
-      document.getElementById('result').textContent = '✅ تم تسجيل الغياب بنجاح';
+      document.getElementById('result').textContent = result.message;
       document.getElementById('attendanceForm').reset();
     } else {
-      document.getElementById('result').textContent = '❌ حدث خطأ أثناء التسجيل';
+      document.getElementById('result').textContent = result.message || '❌ حدث خطأ أثناء التسجيل';
     }
   })
   .catch(err => {
