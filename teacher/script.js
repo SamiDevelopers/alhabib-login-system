@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbzlqrJ2eOvKrttdVhKJnxbzFuoyC6olzwjvPFa0OVF9Km2N7f4o5UVfsRlPV1M8Pxz3/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbznmCZNGSMXYoJmRQfnnHF3RDO2qSU_SR0LHEBkdg5KidC5Bt00BOovVIybi3knn_Ku/exec";
 const teacherCode = sessionStorage.getItem('teacherCode');
 
 if (!teacherCode) {
